@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Browser metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event Registration | Student Activity Portal</title>
+  <meta name="description" content="Register for university events using this accessible student registration form.">
+  <meta name="author" content="Sachin Kumar">
+  <meta name="theme-color" content="#14385c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="bar">
+      <p class="brand">University Student Activity Portal</p>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#activities">Activities</a></li>
+          <li><a href="register.html" aria-current="page">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero-sm" aria-labelledby="page-title">
+      <h1 id="page-title">Student registration</h1>
+      <p>Fill in your details to reserve a place. Fields marked * are required.</p>
+    </section>
+
+    <form action="#" method="post" aria-describedby="status" novalidate>
+
+      <fieldset>
+        <legend>Personal details</legend>
+        <div class="field">
+          <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
+        </div>
+        <div class="field">
+          <label for="sid">Student ID <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="sid" name="student_id" inputmode="numeric" pattern="[0-9]{10}" required aria-required="true" aria-describedby="sid-hint">
+          <p class="hint" id="sid-hint">Enter your 10-digit student ID.</p>
+        </div>
+        <div class="field">
+          <label for="email">University email <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-required="true">
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Academic details</legend>
+        <div class="field">
+          <label for="branch">Branch <span class="req" aria-hidden="true">*</span></label>
+          <select id="branch" name="branch" required aria-required="true">
+            <option value="">Select your branch</option>
+            <option>Computer Science</option>
+            <option>Electronics</option>
+            <option>Mechanical</option>
+            <option>Civil</option>
+            <option>Business Administration</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="year">Year of study</label>
+          <select id="year" name="year">
+            <option value="">Select year</option>
+            <option>1st year</option>
+            <option>2nd year</option>
+            <option>3rd year</option>
+            <option>4th year</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Event</legend>
+        <div class="field">
+          <label for="event">Event <span class="req" aria-hidden="true">*</span></label>
+          <select id="event" name="event" required aria-required="true">
+            <option value="">Choose an event</option>
+            <option>Hackathon 2026</option>
+            <option>Cultural Fest Auditions</option>
+            <option>Career Readiness Workshop</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Participation type <span class="req" aria-hidden="true">*</span></legend>
+        <div class="opt"><input type="radio" id="p-ind" name="participation" value="individual" required><label for="p-ind">Individual</label></div>
+        <div class="opt"><input type="radio" id="p-team" name="participation" value="team"><label for="p-team">Team</label></div>
+        <div class="opt"><input type="radio" id="p-vol" name="participation" value="volunteer"><label for="p-vol">Volunteer</label></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Areas of interest</legend>
+        <div class="opt"><input type="checkbox" id="i-tech" name="interests" value="tech"><label for="i-tech">Technology</label></div>
+        <div class="opt"><input type="checkbox" id="i-cult" name="interests" value="culture"><label for="i-cult">Culture and arts</label></div>
+        <div class="opt"><input type="checkbox" id="i-sport" name="interests" value="sports"><label for="i-sport">Sports</label></div>
+        <div class="opt"><input type="checkbox" id="i-serv" name="interests" value="service"><label for="i-serv">Community service</label></div>
+      </fieldset>
+
+      <div class="field">
+        <label for="notes">Special requirements or comments</label>
+        <textarea id="notes" name="notes" rows="4" aria-describedby="notes-hint"></textarea>
+        <p class="hint" id="notes-hint">For example, accessibility needs or dietary requirements.</p>
+      </div>
+
+      <div class="opt">
+        <input type="checkbox" id="agree" name="agree" required aria-required="true">
+        <label for="agree">I agree to share these details with the event organisers. <span class="req" aria-hidden="true">*</span></label>
+      </div>
+
+      <button type="submit">Register for event</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <footer>
+    <div class="in">
+      <h2>Contact</h2>
+      <p>Student Affairs Office: <a href="mailto:activities@university.example">activities@university.example</a></p>
+      <small>&copy; 2026 University Student Activity Portal</small>
+    </div>
+  </footer>
+
+  <script>
+    // Simple validation: focus the first invalid field and announce the error
+    const form = document.querySelector('form');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const bad = [...form.elements].find(el => el.willValidate && !el.checkValidity());
+      if (bad) {
+        const name = bad.labels && bad.labels[0] ? bad.labels[0].textContent.replace('*', '').trim() : bad.name;
+        status.style.color = '#a31621';
+        status.textContent = 'Please fix this field: ' + name + '.';
+        bad.focus();
+        return;
+      }
+      status.style.color = '#14385c';
+      status.textContent = 'Registration received. Check your university email for confirmation.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
