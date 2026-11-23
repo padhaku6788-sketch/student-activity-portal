@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Browser metadata -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Activity Portal | Events and Activities</title>
+  <meta name="description" content="Browse upcoming university events and explore student clubs and activities.">
+  <meta name="author" content="Sachin Kumar">
+  <meta name="theme-color" content="#14385c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎓%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header>
+    <div class="bar">
+      <p class="brand">University Student Activity Portal</p>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="page-title">
+      <h1 id="page-title">Find your next campus activity</h1>
+      <p>See what is happening this month, explore clubs that match your interests, and register for events.</p>
+      <a class="btn" href="register.html">Register for an event</a>
+    </section>
+
+    <div class="layout">
+      <div>
+        <section id="events" aria-labelledby="events-title">
+          <h2 id="events-title">Upcoming events</h2>
+          <div class="cards">
+            <article>
+              <h3>Hackathon 2026</h3>
+              <p><time datetime="2026-12-05T09:00">5 Dec 2026, 9:00 AM</time></p>
+              <p>24-hour coding challenge for teams of up to four. Main Auditorium.</p>
+            </article>
+            <article>
+              <h3>Cultural Fest Auditions</h3>
+              <p><time datetime="2026-12-08T16:00">8 Dec 2026, 4:00 PM</time></p>
+              <p>Music, dance and drama auditions. Arts Block.</p>
+            </article>
+            <article>
+              <h3>Career Readiness Workshop</h3>
+              <p><time datetime="2026-12-12T11:00">12 Dec 2026, 11:00 AM</time></p>
+              <p>Resume reviews and mock interviews with alumni. Seminar Hall 2.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="activities" aria-labelledby="activities-title">
+          <h2 id="activities-title">University activities</h2>
+          <div class="cards">
+            <article>
+              <h3>Technical clubs</h3>
+              <p>Robotics, coding, IoT and open-source groups that meet weekly.</p>
+            </article>
+            <article>
+              <h3>Sports</h3>
+              <p>Inter-department cricket, football, badminton and athletics.</p>
+            </article>
+            <article>
+              <h3>Volunteering</h3>
+              <p>Community drives, tree planting and teaching programmes.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside aria-labelledby="aside-title">
+        <h2 id="aside-title">Quick information</h2>
+        <p><strong>Registration closes:</strong> <time datetime="2026-12-01">1 Dec 2026</time></p>
+        <h3>Need help?</h3>
+        <p>Visit the Student Affairs office, Block A. Open Monday to Friday, 9 AM to 5 PM.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="in">
+      <h2>Contact</h2>
+      <p>Student Affairs Office: <a href="mailto:activities@university.example">activities@university.example</a></p>
+      <small>&copy; 2026 University Student Activity Portal</small>
+    </div>
+  </footer>
+</body>
+</html>
